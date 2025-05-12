@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign up / Sign in</title>
+    <link rel="stylesheet" href="/css/auth.css">
+    <script src="https://kit.fontawesome.com/4134bcd27d.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <button id="themeToggle" class="theme-button">🌙</button>
+
+    <div class="container" id="container">
+        <div class="form-container sign-up-container">
+            <form id="registerForm">
+                <h1>Create account</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fa-brands fa-vk"></i></i></a>
+                </div>
+
+                <span class="span_text">or use your email for registration</span>
+                <input 
+                type="text" 
+                id="username" 
+                placeholder="Имя пользователя" 
+                required 
+                pattern="\S+" 
+                title="Имя пользователя не должно содержать пробелов"
+              >
+              <input 
+                type="email" 
+                id="email" 
+                placeholder="Email" 
+                required 
+                pattern="^\S+$" 
+                title="Email не должен содержать пробелов"
+              >
+              <input 
+                type="text" 
+                id="phoneNumber" 
+                placeholder="Телефон" 
+                required 
+                pattern="\S+" 
+                title="Телефон не должен содержать пробелов"
+              >
+              <input         
+                type="password" 
+                id="password" 
+                placeholder="Пароль" 
+                required 
+                minlength="8" 
+                pattern="^\S+$" 
+                title="Пароль не должен содержать пробелов и должен быть не менее 8 символов"
+              >
+                <button>Регистрация</button>
+            </form>
+        </div>
+
+        <div class="form-container sign-in-container">
+            <form id="loginForm">
+                <h1>Sign in</h1>
+                <div class="social-container">
+                    <a href="#" class="social"><i class="fa-brands fa-google-plus-g"></i></a>
+                    <a href="#" class="social"><i class="fa-brands fa-vk"></i></a>
+                </div>
+
+                <span class="span_text">or use your account</span>
+                <input type="text" id="payload" placeholder="Имя пользователя или Email" required>
+                <input type="password" id="userPassword" placeholder="Пароль" required>
+                <button>Join</button>
+            </form>
+        </div>
+
+        <div class="overlay-container">
+            <div class="overlay">
+                <div class="overlay-panel overlay-left">
+                    <h1>Welcome!</h1>
+                    <p>If you already have an account</p>
+                    <button class="ghost" id="signIn">Join</button>
+                </div>
+
+                <div class="overlay-panel overlay-right">
+                    <h1>Welcome!</h1>
+                    <p>You may create an account</p>
+                    <button class="ghost" id="signUp">Sign up</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+      document.getElementById('registerForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const response = await fetch('http://my_app:4000/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            username: document.getElementById('username').value,
+            email: document.getElementById('email').value,
+            phoneNumber: document.getElementById('phoneNumber').value,
+            password: document.getElementById('password').value
+          }),
+          credentials: 'include'
+        });
+        const data = await response.json();
+        if (response.ok) {
+          alert('Регистрация прошла успешно');
+          window.location.href = '/auth';
+        } else {
+          alert(data.message || 'Ошибка регистрации');
+        }
+      });
+    </script>
+    <script>
+      document.getElementById('loginForm').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const response = await fetch('http://my_app:4000/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            payload: document.getElementById('payload').value,
+            password: document.getElementById('userPassword').value
+          }),
+          credentials: 'include'
+        });
+        const data = await response.json();
+        if (response.ok) {
+          alert('Вход выполнен успешно');
+          document.cookie = `jwtToken=${data.jwtToken}; path=/`;
+          document.cookie = `userId=${data.userId}; path=/`;
+          window.location.href = '/dashboard';
+        } else {
+          alert(data.message || 'Ошибка входа');
+        }
+      });
+    </script>
+    <script src="/js/auth.js"></script>
+</body>
+</html>
