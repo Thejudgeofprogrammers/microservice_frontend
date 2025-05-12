@@ -3,162 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/main.css">
+    <title>TableMaster</title>
 </head>
 <body>
-    <div class="header">
-        <div class="logo">
-            <a href="/">TableMaster</a>
-        </div>
-        <div class="navigation">
-            <a href="">FAQ</a>
-            <a href="">О НАС</a>
-            <a href="">Возможности</a>
-            <a href="">Контакты</a>
-        </div>
-        <div class="auth">
-            <a href="/auth">Sign In / Sign Up</a>
-        </div>
-    </div>
-    <div class="container">
-        <div class="title">
-            <div class="title_text">
-
-            </div>
-            <div class="text_for_title">
-                Это простая и удобная платформа для 
-                комплексного управления задачами, временем и 
-                стратегическим развитием. Здесь вы можете вести 
-                backlog, планировать расписание и анализировать 
-                цели и риски с помощью SWOT-матрицы — всё 
-                в одном интерфейсе, без лишней сложности.
-            </div>
-            <img src="" alt="">
-            <a href="">Get started</a>
-        </div>
-        <div class="images">
-            <div class="image">
-                <img src="" alt="">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="image">
-                <img src="" alt="">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </div>
-        <div class="text_for_title">
-            Прежде всего это решение, для проектных менеджеров, 
-            студентов, преподавателей,который позволяет воплатить 
-            простоту и удобство ведения Backlog в одном
-        </div>
-        <div class="images">
-            <div class="image">
-                <img src="" alt="">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="image">
-                <img src="" alt="">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </div>
-        <div class="images">
-            <div class="image">
-                <img src="" alt="">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-            <div class="image">
-                <img src="" alt="">
-                <p>Lorem ipsum dolor sit amet.</p>
-            </div>
-        </div>  
-        <div class="messages">
-            <div class="message">
-                <div class="stars">
-                    <img src="" alt="">
+    <div class="page-container">
+        <%- include('elements/header') %>
+        <div class="container">
+            <div class="title">
+                <div class="title_text">
+                    TableMaster
                 </div>
-                <div class="message_title">
-                    Title
+                <div class="text_for_title1">
+                    Это простая и удобная платформа для 
+                    комплексного управления задачами, временем и 
+                    стратегическим развитием. Здесь вы можете вести 
+                    backlog, планировать расписание и анализировать 
+                    цели и риски с помощью SWOT-матрицы — всё 
+                    в одном интерфейсе, без лишней сложности.
                 </div>
-                <div class="message_sub_title">
-                    Title
+                <img src="/jpg/image_2.png" alt="Картинка стола" class="background-image">
+                <a href="/auth">Get started</a>
+            </div>
+            <div class="images">
+                <div class="image">
+                    <img src="/jpg/image_5.png" alt="Картинка">
+                    <p id="tag_p">TableMaster предлагает просто решение, сложных задач</p>
                 </div>
-                <div class="profile">
-                    <div class="avatar">
-                        <img src="" alt="">
+                <div class="image">
+                    <img src="/jpg/image_6.png" alt="Картинка">
+                    <p id="tag_p">Совместную, а также удобную работу в команде</p>
+                </div>
+            </div>
+            <div class="text_for_title2">
+                Прежде всего это решение, для проектных менеджеров, 
+                студентов, преподавателей,который позволяет воплатить 
+                простоту и удобство ведения Backlog в одном
+            </div>
+            <div class="images2">
+                <div class="image">
+                    <img src="/jpg/image_3.png" alt="Картинка">
+                    <p id="tag_p">Интуитивное ведение Backlog</p>
+                </div>
+                <div class="image">
+                    <img src="/jpg/image_4.png" alt="Картинка">
+                    <p id="tag_p">Создание календаря событий</p>
+                </div>
+            </div>
+            <div class="images3">
+                <div class="messages">
+                    <div class="message">
+                        <div class="stars">
+                            <img src="/svg/star-svgrepo-com.svg" alt="star">
+                            <img src="/svg/star-svgrepo-com.svg" alt="star">
+                            <img src="/svg/star-svgrepo-com.svg" alt="star">
+                            <img src="/svg/star-svgrepo-com.svg" alt="star">
+                            <img src="/svg/star-svgrepo-com.svg" alt="star">
+                        </div>
+                        <div class="message_title">
+                            Backlog
+                        </div>
+                        <div class="message_sub_title">
+                            TableMaster позволил мне удобно вести backlog проекта
+                        </div>
+                        <div class="profile">
+                            <div class="avatar">
+                                <img src="" alt="">
+                            </div>
+                            <div class="human_name">
+                                Alex Romanov
+                            </div>
+                            <div class="date">
+                                11-12-2025
+                            </div>
+                        </div>
                     </div>
-                    <div class="human_name">
-                        name
+                    <div class="message">
+                        <div class="stars">
+                            <img src="/svg/star-svgrepo-com.svg" alt="star">
+                            <img src="/svg/star-svgrepo-com.svg" alt="star">
+                            <img src="/svg/star-svgrepo-com.svg" alt="star">
+                            <img src="/svg/star-svgrepo-com.svg" alt="star">
+                            <img src="/svg/star-svgrepo-com.svg" alt="star">
+                        </div>
+                        <div class="message_title">
+                            Scheduler
+                        </div>
+                        <div class="message_sub_title">
+                            TableMaster позволил мне создать календарь для ведения дел
+                        </div>
+                        <div class="profile">
+                            <div class="avatar">
+                                <img src="" alt="">
+                            </div>
+                            <div class="human_name">
+                                Maxim Michailov
+                            </div>
+                            <div class="date">
+                                12-12-2025
+                            </div>
+                        </div>
                     </div>
-                    <div class="date">
-                        date
-                    </div>
-                </div>
-            </div>
-            <div class="message">
-                <div class="stars">
-                    <img src="" alt="">
-                </div>
-                <div class="message_title">
-                    Title
-                </div>
-                <div class="message_sub_title">
-                    Title
-                </div>
-                <div class="profile">
-                    <div class="avatar">
-                        <img src="" alt="">
-                    </div>
-                    <div class="human_name">
-                        name
-                    </div>
-                    <div class="date">
-                        date
-                    </div>
-                </div>
-            </div>
-            <div class="message">
-                <div class="stars">
-                    <img src="" alt="">
-                </div>
-                <div class="message_title">
-                    Title
-                </div>
-                <div class="message_sub_title">
-                    Title
-                </div>
-                <div class="profile">
-                    <div class="avatar">
-                        <img src="" alt="">
-                    </div>
-                    <div class="human_name">
-                        name
-                    </div>
-                    <div class="date">
-                        date
+                    <div class="message">
+                        <div class="stars">
+                            <img src="/svg/star-svgrepo-com.svg" alt="star">
+                            <img src="/svg/star-svgrepo-com.svg" alt="star">
+                            <img src="/svg/star-svgrepo-com.svg" alt="star">
+                            <img src="/svg/star-svgrepo-com.svg" alt="star">
+                            <img src="/svg/star-svgrepo-com.svg" alt="star">
+                        </div>
+                        <div class="message_title">
+                            SWOT
+                        </div>
+                        <div class="message_sub_title">
+                            Я смог использовать интерактивный SWOT анализ
+                        </div>
+                        <div class="profile">
+                            <div class="avatar">
+                                <img src="" alt="">
+                            </div>
+                            <div class="human_name">
+                                Misha Junior
+                            </div>
+                            <div class="date">
+                                13-12-2025
+                            </div>
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div class="image">
+                    <img src="/jpg/image_1.png" alt="Картинка">
+                    <p id="tag_p">А также возможность ведения SWOT-анализа</p>
+                </div>
+            </div>  
         </div>
-    </div>
-    <div class="footer">
-        <div class="svgs">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-            <img src="" alt="">
-        </div>
-        <div class="links">
-            <a href="#">link1</a>
-            <a href="#">link2</a>
-        </div>
-        <div class="links">
-            <a href="#">link1</a>
-            <a href="#">link2</a>
-        </div>
-        <div class="links">
-            <a href="#">link1</a>
-            <a href="#">link2</a>
-        </div>
+        <%- include('elements/footer') %>
     </div>
 </body>
 </html>
